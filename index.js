@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const moment = require('moment');
 moment().format();
-const SettingsBill = require('../settings-bill-expressjs/settings-bill')
+const SettingsBill = require('./settings-bill')
 const app = express();
 const settingsBill = SettingsBill();
 
@@ -70,7 +70,7 @@ app.get('/actions/:type', function (req, res) {
   })
 });
 
-let PORT = process.env.PORT || 3007;
+let PORT = process.env.PORT || 3008;
 
 app.listen(PORT, function () {
   console.log('App starting on port', PORT);
